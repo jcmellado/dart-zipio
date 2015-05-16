@@ -72,12 +72,15 @@ The optional `log` parameter of the `readZip` function can be used to get all th
 ```
 At the `Level.FINE` only the the offset and the main attributes will be logged:
 
->2015-05-16 20:01:13.511 FINE    zipio # File Header [Offset: 1568171 (0x17edab)]
+```
+2015-05-16 20:01:13.511 FINE    zipio # File Header [Offset: 1568171 (0x17edab)]
 2015-05-16 20:01:13.511 FINE    zipio  - File name: test/folder/example.txt
+```
 
 At the `Level.FINER` all the attributes will be logged:
 
->2015-05-16 20:04:51.739 FINE    zipio # File Header [Offset: 1548020 (0x179ef4)]
+```
+2015-05-16 20:04:51.739 FINE    zipio # File Header [Offset: 1548020 (0x179ef4)]
 2015-05-16 20:04:51.739 FINER   zipio  - Signature: 0x02014b50
 2015-05-16 20:04:51.739 FINER   zipio  - Version made by: 0x001e (v3.0) [MS-DOS and OS/2 (FAT / VFAT / FAT32 file systems)]
 2015-05-16 20:04:51.739 FINER   zipio  - Version needed to extract: 0x0014 (v2.0)
@@ -98,10 +101,12 @@ At the `Level.FINER` all the attributes will be logged:
 2015-05-16 20:04:51.739 FINER   zipio  - External file attributes: 32 (0x00000020)
 2015-05-16 20:04:51.739 FINER   zipio  - Relative offset of local header: 600173 (0x0009286d)
 2015-05-16 20:04:51.739 FINE    zipio  - File name: test/folder/example.txt
+```
 
 At the `Level.FINEST` the raw data and all the attributes will be logged:
 
->2015-05-16 20:07:12.416 FINE    zipio # File Header [Offset: 1571816 (0x17fbe8)]
+```
+2015-05-16 20:07:12.416 FINE    zipio # File Header [Offset: 1571816 (0x17fbe8)]
 2015-05-16 20:07:12.416 FINEST  zipio 
 2015-05-16 20:07:12.416 FINEST  zipio           00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
 2015-05-16 20:07:12.416 FINEST  zipio           -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -113,3 +118,4 @@ At the `Level.FINEST` the raw data and all the attributes will be logged:
 2015-05-16 20:07:12.416 FINER   zipio  - Signature: 0x02014b50
 2015-05-16 20:07:12.416 FINER   zipio  - Version made by: 0x001e (v3.0) [MS-DOS and OS/2 (FAT / VFAT / FAT32 file systems)]
 ...
+```
