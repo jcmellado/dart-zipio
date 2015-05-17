@@ -20,7 +20,7 @@
   THE SOFTWARE.
 */
 
-import "dart:io" show Directory, File;
+import "dart:io" show Directory, File, Platform;
 import "package:path/path.dart" as path show absolute, normalize;
 import "package:zipio/zipio.dart" show readZip, ZipEntity, ZipEntry, ZipMethod;
 
@@ -64,7 +64,8 @@ main(List<String> args) async {
     }
 
     // Absolute file name.
-    var name = path.normalize(path.absolute(target + entry.name));
+    var name = path
+        .normalize(path.absolute(target + Platform.pathSeparator + entry.name));
 
     // Avoid to create files outside the target directory.
     if (!name.startsWith(target)) {
