@@ -119,3 +119,4 @@ At the `Level.FINEST` the raw data and all the attributes will be logged:
 2015-05-16 20:07:12.416 FINER   zipio  - Version made by: 0x001e (v3.0) [MS-DOS and OS/2 (FAT / VFAT / FAT32 file systems)]
 ...
 ```
+In the `example` folder of the project you can find a full working `info` Dart application.
