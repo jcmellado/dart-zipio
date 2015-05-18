@@ -22,22 +22,45 @@
 
 part of zipio;
 
+///
+/// Reads a zip file and streams all its file entries.
+///
 class ZipReader {
+
+  ///
+  ///
   FileMapping _file;
 
+  ///
+  ///
   Encoding _encoding;
 
+  ///
+  /// Default UTF-8 codec.
+  ///
   final Encoding _utf8Codec = const Utf8Codec(allowMalformed: true);
 
+  ///
+  ///
+  ///
   ZipReader(String path, {Encoding encoding}) {
     _file = new FileMapping(path);
     _encoding = encoding == null ? _utf8Codec : encoding;
   }
 
+  ///
+  /// Opens the zip file.
+  ///
   Future open() => _file.open();
 
+  ///
+  /// Closes the zip file.
+  ///
   Future close() => _file.close();
 
+  ///
+  /// Process the zip file.
+  ///
   Stream<ZipEntity> process() async* {
     var zip = await readZip();
 
@@ -70,7 +93,7 @@ class ZipReader {
       }
     }
 
-    //  Takes the correct directory values.
+    // Resolves the correct directory values.
     zip.directory = buildDirectory(zip, offset);
 
     return zip;
