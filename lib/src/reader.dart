@@ -28,10 +28,12 @@ part of zipio;
 class ZipReader {
 
   ///
+  /// .ZIP file mapped in memory.
   ///
   FileMapping _file;
 
   ///
+  /// Encoding used for texts, mainly the file names.
   ///
   Encoding _encoding;
 
@@ -41,7 +43,10 @@ class ZipReader {
   final Encoding _utf8Codec = const Utf8Codec(allowMalformed: true);
 
   ///
+  /// Creates a reader for the [path] file.
   ///
+  /// UTF-8 is used by default for texts, but a custom [encoding] can be
+  /// specified.
   ///
   ZipReader(String path, {Encoding encoding}) {
     _file = new FileMapping(path);
