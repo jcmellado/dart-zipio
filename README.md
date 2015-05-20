@@ -62,6 +62,12 @@ zipio uses UTF-8 by default too, but a different [Encoding](https://api.dartlang
   readZip(path, enconding: awesomeEnconding);
 ```
 
+zipio provides a `CP437` codec ready to use:  
+
+```
+  readZip(path, enconding: CP437);
+```
+
 ###Logging
 As stated above, I wrote this library to analyze some zip files, so I dumped a lot of debugging information with the help of the [logging](https://pub.dartlang.org/packages/logging) package. 
 

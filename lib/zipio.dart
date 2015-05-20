@@ -33,7 +33,14 @@ library zipio;
 import "dart:async"
     show Completer, Future, Stream, StreamController, StreamSubscription;
 import "dart:convert"
-    show ByteConversionSink, Encoding, StringConversionSink, Utf8Codec;
+    show
+        ByteConversionSink,
+        ByteConversionSinkBase,
+        Converter,
+        Encoding,
+        StringConversionSink,
+        StringConversionSinkBase,
+        Utf8Codec;
 import "dart:collection" show UnmodifiableListView;
 import "dart:io" show File, FileMode, RandomAccessFile, ZLibCodec;
 import "dart:math" show min, max;
@@ -45,6 +52,7 @@ import "package:logging/logging.dart" show Level, Logger;
 // zipio packages.
 import "package:zipio/zipio_extra.dart";
 
+part "src/cp437.dart";
 part "src/date.dart";
 part "src/debug.dart";
 part "src/entity.dart";
