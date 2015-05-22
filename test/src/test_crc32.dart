@@ -20,18 +20,28 @@
   THE SOFTWARE.
 */
 
-library zipio_test;
+part of zipio_test;
 
-import "dart:convert";
+///
+/// CRC-32 tests.
+///
+/// - CRC catalog:
+///   http://reveng.sourceforge.net/crc-catalogue/17plus.htm#crc.cat-bits.32
+///
+class TestCrc32 {
 
-import "package:test/test.dart";
-import "package:zipio/zipio.dart";
+  /// Run all tests.
+  static void run() {
+    group("CRC-32", () {
 
-part "src/test_cp437.dart";
-part "src/test_crc32.dart";
+      // Compute.
+      test("compute", () {
+        expect(Crc32.compute([]), equals(0));
+        expect(Crc32.compute("123456789".codeUnits), equals(0xcbf43926));
 
-/// Test all.
-void main() {
-  TestCp437.run();
-  TestCrc32.run();
+        var crc = Crc32.compute("12345".codeUnits);
+        expect(Crc32.compute("6789".codeUnits, crc), equals(0xcbf43926));
+      });
+    });
+  }
 }

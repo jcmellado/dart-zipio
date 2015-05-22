@@ -53,6 +53,7 @@ import "package:logging/logging.dart" show Level, Logger;
 import "package:zipio/zipio_extra.dart";
 
 part "src/cp437.dart";
+part "src/crc32.dart";
 part "src/date.dart";
 part "src/debug.dart";
 part "src/entity.dart";
